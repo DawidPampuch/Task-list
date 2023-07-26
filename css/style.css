@@ -1,0 +1,16 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+.body {
+    background-color: rgb(70, 160, 160);
+    max-width: 1000px;
+    margin: auto;
+    font-family: 'Oswald', sans-serif;
+}

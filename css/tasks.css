@@ -13,6 +13,10 @@
     border-bottom: 1px rgb(71, 177, 189) solid;
 }
 
+.tasks__content {
+    font-size: 20px;
+}
+
 .tasks__content--done {
     text-decoration: line-through;
 }

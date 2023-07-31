@@ -83,6 +83,26 @@
             tasksElement.innerHTML = tasks.map(tasksToHTML).join("");
     };
 
+    const renderButtons = () => {
+        const buttonsElement = document.querySelector(".js-buttons");
+
+        if (!tasks.lenght) {
+            buttonsElement.innerHTML = "";
+            return;
+        }
+
+        buttonsElement.innerHTML = `
+        <button class="buttons__button js-toggleHideDoneTasks">
+        ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+        </button>
+        <button class="buttons__button js-markAllDone"
+        ${ tasks.every(({ done }) => done) ? " disabled" : ""}>
+        Ukończ wszystkie
+        </button>
+        `;
+    };
+
+
         document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
 
         bindRemoveEvents();

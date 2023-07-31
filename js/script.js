@@ -62,13 +62,10 @@
         });
     };
 
-    const render = () => {
-        let tasksListHTMLContent = "";
-
-        for (const task of tasks) {
-            tasksListHTMLContent += `
+    const renderTasks = () => {
+        const tasksToHTML = task => `
               <li
-                class="tasks__items js-task"
+                class="tasks__items${task.done && hideDoneTasks ? "tasks__item--hidden" : "" } js-task"
               >
                 <button class="tasks__button tasks__button--toggleDone js-toggleDone">
                   ${task.done ? "✔" : ""}
@@ -81,13 +78,16 @@
                 </button>
               </li>
             `;
-        };
+
+            const tasksElement = document.querySelector("js.tasks");
+            tasksElement.innerHTML = tasks.map(tasksToHTML).join("");
+    };
 
         document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
 
         bindRemoveEvents();
         bindToggleDoneEvents();
-    };
+    
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -111,4 +111,4 @@
     };
 
     init();
-}
+};

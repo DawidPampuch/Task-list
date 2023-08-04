@@ -25,10 +25,12 @@
     border-radius: 20px;
     padding: 5px 15px 5px 15px;
     margin: 5px;
+    transition: 0.5s;
 }
 
 .form__button:hover {
     background-color: rgb(25, 123, 134);
+    transform: scale(1.1);
 }
 
 .form__button:active {
